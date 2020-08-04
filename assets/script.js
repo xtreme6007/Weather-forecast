@@ -2,6 +2,7 @@
 var cityNameEl = $("#cityName");
 var searchButton = $("#citySearch");
 var todayForecast = $("currentDayForecast")
+var clearSkyImg = "http://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg"
 // when search button is clicked
 searchButton.on("click", function () {
     $("#currentDayForecast").empty();
@@ -16,9 +17,9 @@ searchButton.on("click", function () {
     }).then(function (response) {
         // store response data from open weather maps
         var temp = response.main.temp;
+        var windSpeed = response.wind.speed;
         var lon = response.coord.lon;
         var lat = response.coord.lat;
-        var windSpeed = response.wind.speed;
         var humidity = response.main.humidity;
         var name = response.name;
         var feelsLike = response.main.feels_like;
@@ -31,15 +32,15 @@ searchButton.on("click", function () {
         var feelEl = $("<p>");
         var weatherEl = $("<p>")
         var currentHead = $("<h1>")
-        
+
 
         // give text to element
-        tempEl.text("Temp: " +temp + "F");
-        feelEl.text("Feels Like: "+feelsLike + "F");
+        tempEl.text("Temp: " + temp + "F");
+        feelEl.text("Feels Like: " + feelsLike + "F");
         nameEl.text(name);
         windEl.text("Wind Speed: " + windSpeed + "mph");
         humidEl.text("Humidity: " + humidity);
-        weatherEl.text("Conditions: "+weather);
+        weatherEl.text("Conditions: " + weather);
         currentHead.text("Current Forecast:")
         console.log(temp);
         // append to html
@@ -51,9 +52,25 @@ searchButton.on("click", function () {
         $("#currentDayForecast").append(humidEl);
         $("#currentDayForecast").append(weatherEl);
 
+        if (weather = '"Clear"') {
+            $("#conditionImg").attr("src", clearSkyImg);
+        }
+
         console.log(response);
         console.log(cityName);
+        // for uv index
+        var indexURL = "http://api.openweathermap.org/data/2.5/uvi?appid=f6c77a9f94d27e264229784c1325f0c5&lat=" + lat + "&lon=" + lon;
+        $.ajax({
+            url: indexURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+            var uvIndex = response.value;
+            console.log(uvIndex);
+            var uvEl = $("<p>");
+            uvEl.text("UV Index:" + uvIndex);
+            $("#currentDayForecast").append(uvEl);
+        });
     });
-
 
 });

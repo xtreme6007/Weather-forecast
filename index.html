@@ -11,15 +11,22 @@
 
 
 </head>
-<h1>Weather Forecast</h1>
+<h1 class="jumbotron text-center" id = "title">Weather Forecast</h1>
 
 <body>
+    
+       <div class = container> 
     <input type="text" id="cityName"></input><button id="citySearch" type="submit">Search</button>
-    <div id="historyDiv"> </div>
-    <div id="currentDayForecast">
+       
+    <div id="currentDayForecast" class ="float-right" >
+        <img id= "conditionImg" class= "float-right" height = "50px" width= "50px">
+        
+    
         
     </div>
+       </div>
     <div id="fiveDayForecast"></div>
+    
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

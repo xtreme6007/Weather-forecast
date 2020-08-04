@@ -1,0 +1,9 @@
+#currentDayForecast  {
+    border: 10px blue solid;
+    height: 500px;
+    width: 500px;
+    margin-top: 0;
+}
+.jumbotron {
+    padding-bottom: 0px;
+}
