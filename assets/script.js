@@ -3,6 +3,14 @@ var cityNameEl = $("#cityName");
 var searchButton = $("#citySearch");
 var todayForecast = $("currentDayForecast")
 var clearSkyImg = "http://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg"
+var nameEl = $("<h2>");
+var tempEl = $("<p>");
+var windEl = $("<p>");
+var humidEl = $("<p>");
+var feelEl = $("<p>");
+var weatherEl = $("<p>")
+var currentHead = $("<h1>")
+var imgEl = $("<img>");
 // when search button is clicked
 searchButton.on("click", function () {
     $("#currentDayForecast").empty();
@@ -25,13 +33,7 @@ searchButton.on("click", function () {
         var feelsLike = response.main.feels_like;
         var weather = response.weather[0].main;
         // create element for temp
-        var nameEl = $("<h2>");
-        var tempEl = $("<p>");
-        var windEl = $("<p>");
-        var humidEl = $("<p>");
-        var feelEl = $("<p>");
-        var weatherEl = $("<p>")
-        var currentHead = $("<h1>")
+
 
 
         // give text to element
@@ -45,6 +47,7 @@ searchButton.on("click", function () {
         console.log(temp);
         // append to html
         $("#currentDayForecast").append(currentHead);
+        $("#currentDayForecast").append(imgEl);
         $("#currentDayForecast").append(nameEl);
         $("#currentDayForecast").append(tempEl);
         $("#currentDayForecast").append(feelEl);
@@ -52,9 +55,44 @@ searchButton.on("click", function () {
         $("#currentDayForecast").append(humidEl);
         $("#currentDayForecast").append(weatherEl);
 
-        if (weather = '"Clear"') {
-            $("#conditionImg").attr("src", clearSkyImg);
+
+        if (weather === "Clear") {
+            imgEl.attr("src", "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg");
+            imgEl.attr("height", "100px");
+            imgEl.attr("width", "100px");
+            imgEl.attr("class", "float-right")
+        } else if (weather === "Thunderstorm") {
+            imgEl.attr("src", "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg");
+            imgEl.attr("height", "100px");
+            imgEl.attr("width", "100px");
+            imgEl.attr("class", "float-right")
+
+        } else if (weather === "Drizzle") {
+            imgEl.attr("src", "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg");
+            imgEl.attr("height", "100px");
+            imgEl.attr("width", "100px");
+            imgEl.attr("class", "float-right")
+
+        } else if (weather === "Rain") {
+            imgEl.attr("src", "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg");
+            imgEl.attr("height", "100px");
+            imgEl.attr("width", "100px");
+            imgEl.attr("class", "float-right")
+
+        } else if (weather === "Snow") {
+            imgEl.attr("src", "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg");
+            imgEl.attr("height", "100px");
+            imgEl.attr("width", "100px");
+            imgEl.attr("class", "float-right")
+
+        } else if (weather === "Clouds") {
+            imgEl.attr("src", "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg");
+            imgEl.attr("height", "100px");
+            imgEl.attr("width", "100px");
+            imgEl.attr("class", "float-right")
+
         }
+
 
         console.log(response);
         console.log(cityName);
