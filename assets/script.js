@@ -19,17 +19,37 @@ searchButton.on("click", function () {
         var lon = response.coord.lon;
         var lat = response.coord.lat;
         var windSpeed = response.wind.speed;
-        var humidity = response.main.humidty;
+        var humidity = response.main.humidity;
         var name = response.name;
         var feelsLike = response.main.feels_like;
-        var weather = response.weather.main;
+        var weather = response.weather[0].main;
         // create element for temp
+        var nameEl = $("<h2>");
         var tempEl = $("<p>");
+        var windEl = $("<p>");
+        var humidEl = $("<p>");
+        var feelEl = $("<p>");
+        var weatherEl = $("<p>")
+        var currentHead = $("<h1>")
+        
+
         // give text to element
-        tempEl.text(temp);
+        tempEl.text("Temp: " +temp + "F");
+        feelEl.text("Feels Like: "+feelsLike + "F");
+        nameEl.text(name);
+        windEl.text("Wind Speed: " + windSpeed + "mph");
+        humidEl.text("Humidity: " + humidity);
+        weatherEl.text("Conditions: "+weather);
+        currentHead.text("Current Forecast:")
         console.log(temp);
         // append to html
+        $("#currentDayForecast").append(currentHead);
+        $("#currentDayForecast").append(nameEl);
         $("#currentDayForecast").append(tempEl);
+        $("#currentDayForecast").append(feelEl);
+        $("#currentDayForecast").append(windEl);
+        $("#currentDayForecast").append(humidEl);
+        $("#currentDayForecast").append(weatherEl);
 
         console.log(response);
         console.log(cityName);
