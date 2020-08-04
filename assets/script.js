@@ -2,7 +2,7 @@
 var cityNameEl = $("#cityName");
 var searchButton = $("#citySearch");
 var todayForecast = $("currentDayForecast")
-var clearSkyImg = "http://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg"
+var clearSkyImg = "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg"
 var nameEl = $("<h2>");
 var tempEl = $("<p>");
 var windEl = $("<p>");
@@ -17,7 +17,7 @@ searchButton.on("click", function () {
     // get name of city
     var cityName = cityNameEl.val();
     // add name of city to url 
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=f6c77a9f94d27e264229784c1325f0c5&units=imperial";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=f6c77a9f94d27e264229784c1325f0c5&units=imperial";
     // request information from open weather map
     $.ajax({
         url: queryURL,
@@ -104,7 +104,7 @@ searchButton.on("click", function () {
         console.log(response);
         console.log(cityName);
         // for uv index
-        var indexURL = "http://api.openweathermap.org/data/2.5/uvi?appid=f6c77a9f94d27e264229784c1325f0c5&lat=" + lat + "&lon=" + lon;
+        var indexURL = "https://api.openweathermap.org/data/2.5/uvi?appid=f6c77a9f94d27e264229784c1325f0c5&lat=" + lat + "&lon=" + lon;
         $.ajax({
             url: indexURL,
             method: "GET"
