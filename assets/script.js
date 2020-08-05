@@ -61,37 +61,37 @@ searchButton.on("click", function () {
 
         // icon for clear weather
         if (weather === "Clear") {
-            imgEl.attr("src", "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg");
+            imgEl.attr("src", "assets/Imgs/sunicon.jpg");
             imgEl.attr("height", "100px");
             imgEl.attr("width", "100px");
             imgEl.attr("class", "float-right")
             // icon for Thunderstorm
         } else if (weather === "Thunderstorm") {
-            imgEl.attr("src", "https://listimg.pinclipart.com/picdir/s/13-132540_hail-storm-cliparts-storm-weather-icon-png-download.png");
+            imgEl.attr("src", "assets/Imgs/thunderstorm.png");
             imgEl.attr("height", "100px");
             imgEl.attr("width", "100px");
             imgEl.attr("class", "float-right")
             // icon for Drizzle
         } else if (weather === "Drizzle") {
-            imgEl.attr("src", "https://www.clipartmax.com/png/middle/183-1837549_cloud-drizzle-rain-shower-storm-sun-weather-icon-sun-cloud-and-rain.png");
+            imgEl.attr("src", "assets/Imgs/drizzle.png");
             imgEl.attr("height", "100px");
             imgEl.attr("width", "100px");
             imgEl.attr("class", "float-right")
             // icon for rainy weather
         } else if (weather === "Rain") {
-            imgEl.attr("src", "https://previews.123rf.com/images/maheyfoto/maheyfoto1705/maheyfoto170500076/78966726-illustration-of-clouds-with-rainfall-weather-icon-of-heavy-rainfall-dark-gray-clouds-with-rain-weath.jpg");
+            imgEl.attr("src", "assets/Imgs/rain.jpg");
             imgEl.attr("height", "100px");
             imgEl.attr("width", "100px");
             imgEl.attr("class", "float-right")
             // icon for snow 
         } else if (weather === "Snow") {
-            imgEl.attr("src", "https://i.pinimg.com/originals/00/66/43/006643ac68fe18b0df88e9ff21a4b153.jpg");
+            imgEl.attr("src", "assets/Imgs/snow.jpg");
             imgEl.attr("height", "100px");
             imgEl.attr("width", "100px");
             imgEl.attr("class", "float-right")
             // icon for cloudy weather
         } else if (weather === "Clouds") {
-            imgEl.attr("src", "https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-partly-sunny-512.png");
+            imgEl.attr("src", "assets/Imgs/cloudy.jpeg");
             imgEl.attr("height", "100px");
             imgEl.attr("width", "100px");
             imgEl.attr("class", "float-right")
