@@ -190,9 +190,7 @@ searchButton.on("click", function () {
                 var fifthHumid = fifthDay.main.humidity;
 
 
-            // create day elements
-            var tomorowEL = $("<div>");
-            var secondDayEl = $("<div>");
+            
 
 
 
