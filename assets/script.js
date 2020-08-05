@@ -91,7 +91,7 @@ searchButton.on("click", function () {
             imgEl.attr("class", "float-right")
             // icon for cloudy weather
         } else if (weather === "Clouds") {
-            imgEl.attr("src", "assets/Imgs/cloudy.jpeg");
+            imgEl.attr("src", "assets/Imgs/cloudy1.png");
             imgEl.attr("height", "100px");
             imgEl.attr("width", "100px");
             imgEl.attr("class", "float-right")
