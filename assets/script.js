@@ -50,7 +50,7 @@ searchButton.on("click", function () {
         humidEl.text("Humidity:" + humidity);
         weatherEl.text("Conditions: " + weather);
         currentHead.text("Current Forecast:")
-        console.log(temp);
+        
 
         // append to html
         $("#currentDayForecast").append(currentHead);
@@ -119,7 +119,7 @@ searchButton.on("click", function () {
             // span tag for Uv index value
             var span = $("<span>");
 
-            console.log(uvIndex);
+            
             // set UV index for span text
             span.text(uvIndex)
 
@@ -156,12 +156,48 @@ searchButton.on("click", function () {
         }).then(function (response) {
            console.log(response);
            // set day variables
-           var tommorow = response.list[1];
-           var secondDay = response.list[2];
-           var thirdDay = response.list[3];
-           var fourthDay = response.list[4];
-           var fifthDay = resonse.list[5];
+           var tomorow = response.list[5];
+           var secondDay = response.list[13];
+           var thirdDay = response.list[21];
+           var fourthDay = response.list[29];
+           var fifthDay = response.list[37];
            
+           // get data for each day
+                // tomorow data
+                var tomorowDate = tomorow.dt_txt;
+                var tomorowCondition = tomorow.weather[0].main;
+                var tomorowTemp = tomorow.main.temp;
+                var tomorowHumid = tomorow.main.humidity;
+                // second day data
+                var secondDate = secondDay.dt_txt;
+                var secondCondition = secondDay.weather[0].main;
+                var secondTemp = secondDay.main.temp;
+                var secondHumid = secondDay.main.humidity;
+                // third day data
+                var thirdDate = thirdDay.dt_txt;
+                var thirdCondition = thirdDay.weather[0].main;
+                var thirdTemp = thirdDay.main.temp;
+                var thirdHumid = thirdDay.main.humidity;
+                // fourth day data
+                var fourthDate = fourthDay.dt_txt;
+                var fourthCondition = fourthDay.weather[0].main;
+                var fourthTemp = fourthDay.main.temp;
+                var fourthHumid = fourthDay.main.humidity;
+                //fifth day data
+                var fifthDate = fifthDay.dt_txt;
+                var fifthCondition = fifthDay.weather[0].main;
+                var fifthTemp = fifthDay.main.temp;
+                var fifthHumid = fifthDay.main.humidity;
+
+
+            // create day elements
+            var tomorowEL = $("<div>");
+            var secondDayEl = $("<div>");
+
+
+
+
+
         });
         
 });
