@@ -2,7 +2,7 @@
 var cityNameEl = $("#cityName");
 var searchButton = $("#citySearch");
 var todayForecast = $("currentDayForecast")
-var clearSkyImg = "https://icon-library.com/images/sunny-weather-icon/sunny-weather-icon-13.jpg"
+var fiveDay = $("#fiveDayForecast");
 var nameEl = $("<h2>");
 var tempEl = $("<p>");
 var windEl = $("<p>");
@@ -11,6 +11,9 @@ var feelEl = $("<p>");
 var weatherEl = $("<p>")
 var currentHead = $("<h1>")
 var imgEl = $("<img>");
+
+
+
 // when search button is clicked
 searchButton.on("click", function () {
     $("#currentDayForecast").empty();
@@ -101,7 +104,7 @@ searchButton.on("click", function () {
 
 
 
-        console.log(response);
+        
         console.log(cityName);
         // for uv index
         var indexURL = "https://api.openweathermap.org/data/2.5/uvi?appid=f6c77a9f94d27e264229784c1325f0c5&lat=" + lat + "&lon=" + lon;
@@ -109,7 +112,7 @@ searchButton.on("click", function () {
             url: indexURL,
             method: "GET"
         }).then(function (response) {
-            console.log(response)
+            
             var uvIndex = response.value;
             // uv index tag
             var uvEl = $("<p>");
@@ -144,5 +147,21 @@ searchButton.on("click", function () {
             $("#currentDayForecast").append(uvElStyle);
         });
     });
+        // start working on five day forecast
+        var fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=f6c77a9f94d27e264229784c1325f0c5&units=imperial";
 
+        $.ajax({
+            url: fiveDayUrl,
+            method: "GET"
+        }).then(function (response) {
+           console.log(response);
+           // set day variables
+           var tommorow = response.list[1];
+           var secondDay = response.list[2];
+           var thirdDay = response.list[3];
+           var fourthDay = response.list[4];
+           var fifthDay = resonse.list[5];
+           
+        });
+        
 });
