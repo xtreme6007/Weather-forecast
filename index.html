@@ -14,24 +14,22 @@
 <h1 class="jumbotron text-center" id = "title">Weather Forecast</h1>
 
 <body>
-    
+    <div class = "row">
        <div class = container> 
     <input type="text" id="cityName"></input><button id="citySearch" type="submit">Search</button>
-       
-    <div id="currentDayForecast" class ="float-right" >
+       <div id = "previousButtons"></div>
+    <div id="currentDayForecast" class ="float-right" ></div>
     </div>
-       </div>
-    <div id="fiveDayForecast">
-        <div class = "FiveDayBlocks" id ="tommorowBlock"></div>
-        <div class = "FiveDayBlocks" id = "secondDayBlock"></div>
-        <div class = "FiveDayBlocks" id = "thirdDayBlock"></div>
-        <div class = "FiveDayBlocks" id ="fourthDayBlock"></div>
-        <div class = "FiveDayBlocks" id = "fifthDayBlock"></div>
-
-
-
-
     </div>
+        
+        <div class = "row" id="fiveDayForecast" disable = true>
+        <div class = "fiveDayBlocks" id ="tomorowBlock"></div>
+        <div class = "fiveDayBlocks" id = "secondDayBlock"></div>
+        <div class = "fiveDayBlocks" id = "thirdDayBlock"></div>
+        <div class = "fiveDayBlocks" id ="fourthDayBlock"></div>
+        <div class = "fiveDayBlocks" id = "fifthDayBlock"></div>
+        </div>
+        
     
 
 
