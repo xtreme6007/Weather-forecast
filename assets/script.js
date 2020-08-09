@@ -1,4 +1,7 @@
+
+
 // global variables
+
 var cityNameEl = $("#cityName");
 var searchButton = $("#citySearch");
 var fiveDay = $("#fiveDayForecast");
@@ -7,24 +10,32 @@ var tempEl = $("<p>");
 var windEl = $("<p>");
 var humidEl = $("<p>");
 var feelEl = $("<p>");
-var weatherEl = $("<p>")
-var currentHead = $("<h1>")
+var weatherEl = $("<p>");
+var currentHead = $("<h1>");
 var imgEl = $("<img>");
-var bttnsContainer = $("#previousButtons")
+var bttnsContainer = $("#previousButtons");
 var bttn = $("<button>");
 var recentCity = localStorage.getItem("Last-city:");
-
-
+var cityName = "Dallas";
 
 // renderData Function
 function renderData() {
-    
+    //empty fields on click of search
     $("#fiveDayForecast").empty();
     $("#currentDayForecast").empty();
-    var cityName = cityNameEl.val();
-    
+
+     cityName = cityNameEl.val();
+
     // add name of city to url 
+
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=77daaa374cabc5db58c1c1b7cc495c76";
+
+    switch (cityName) {
+        case "": queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + recentCity + "&appid=77daaa374cabc5db58c1c1b7cc495c76";
+
+    }
+
+
     // request information from open weather map
     $.ajax({
         url: queryURL,
@@ -40,7 +51,6 @@ function renderData() {
         var name = response.name;
         var feelsLike = response.main.feels_like;
         var weather = response.weather[0].main;
-        var dataTime = response.dt;
         var sunrise = response.sys.sunrise;
         var sunset = response.sys.sunrise;
         // create element for temp
@@ -155,7 +165,14 @@ function renderData() {
     });
     // start working on five day forecast
     var fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=77daaa374cabc5db58c1c1b7cc495c76&units=imperial";
-            
+
+    switch (cityName) {
+        case "": fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + recentCity + "&appid=77daaa374cabc5db58c1c1b7cc495c76&units=imperial";
+
+    }
+    
+    
+
     $.ajax({
         url: fiveDayUrl,
         method: "GET"
@@ -499,18 +516,19 @@ function renderData() {
 
         localStorage.setItem("Last-city:", cityName)
       
-            
+            console.log(queryURL);
           
     
     });
 }
+$(document).ready(function () {
 
 
-
-    $(document).ready(function () {
+    
+        renderData();
         
-
+        
     });
-    searchButton.on("click", renderData)
+    searchButton.on("click", renderData);
 
            
