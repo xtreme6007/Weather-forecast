@@ -170,8 +170,6 @@ function renderData() {
         case "": fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + recentCity + "&appid=77daaa374cabc5db58c1c1b7cc495c76&units=imperial";
 
     }
-    
-    
 
     $.ajax({
         url: fiveDayUrl,
