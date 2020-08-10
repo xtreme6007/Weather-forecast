@@ -5,4 +5,4 @@ The purpose of this application is to search the current forecast and fiveday fo
 
 Github Repo: https://github.com/xtreme6007/Weather-forecast-psn.git
 
-Deployed Aplication: 
+Deployed Aplication: https://xtreme6007.github.io/Weather-forecast-psn/
