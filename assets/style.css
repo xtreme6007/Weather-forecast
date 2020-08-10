@@ -1,5 +1,5 @@
 #currentDayForecast  {
-    border: 10px blue solid;
+    border: 10px black solid;
     height: 400px;
     width: 500px;
     margin-top: 0;
@@ -22,4 +22,10 @@ margin: 10px;
 #Buttons {
     width: 100px;
 }
-
+body {
+background-color: blue;
+color: white;
+}
+h1 {
+    background-color: orangered;
+}
